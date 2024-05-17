@@ -1,0 +1,60 @@
+get:
+  tags:
+    - search
+  summary: List all curations
+  description: List all curations
+  operationId: get_curations
+  parameters:
+    - in: query
+      name: catalog_id
+      schema:
+        type: string
+      description: Filter by catalog_id
+  responses:
+    "200":
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../../schemas/ResponseTemplateSuccess.yaml"
+              - type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../../schemas/search/curation.yaml"
+                required:
+                  - data
+post:
+  tags:
+    - search
+  summary: Create Curations
+  description: Create Curations
+  operationId: create_curations
+  requestBody:
+    description: Curation request body
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/search/curation.yaml"
+  responses:
+    "200":
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../../schemas/ResponseTemplateSuccess.yaml"
+              - type: object
+                properties:
+                  data:
+                    $ref: "../../schemas/search/curation.yaml"
+                required:
+                  - data
+    "422":
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/validation_error_response.yaml"

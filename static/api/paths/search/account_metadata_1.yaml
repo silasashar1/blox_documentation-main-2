@@ -1,0 +1,84 @@
+get:
+  tags:
+  - search
+  summary: Get Account Metadata
+  description: Get Account Metadata
+  operationId: get_account_metadata
+  parameters:
+    - required: true
+      schema:
+        title: Account Metadata Id
+        type: string
+      name: account_metadata_id
+      in: path
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/AccountMetaOut.yaml'
+    '422':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/ValidationError.yaml'
+delete:
+  tags:
+  - search
+  summary: Delete Account Metadata
+  description: Delete Account Metadata
+  operationId: delete_account_metadata
+  parameters:
+    - required: true
+      schema:
+        title: Account Metadata Id
+        type: string
+      name: account_metadata_id
+      in: path
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/ConfigDeleteAccountMeta.yaml'
+    '422':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/ValidationError.yaml'
+patch:
+  tags:
+  - search
+  summary: Update Account Metadata
+  description: Update Account Metadata
+  operationId: update_account_metadata
+  parameters:
+    - required: true
+      schema:
+        title: Account Metadata Id
+        type: string
+      name: account_metadata_id
+      in: path
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/AccountMetaIn.yaml'
+    required: true    
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/AccountMetaOut.yaml'
+    '422':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/ValidationError.yaml'

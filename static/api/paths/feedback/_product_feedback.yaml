@@ -1,0 +1,92 @@
+post:
+  summary: Catalog data Feedback API
+  description: Feedback API for tag and metadata
+  operationId: tag-feedback
+  tags:
+  - catalogs
+  parameters:
+    - name: x-correlation-id
+      in: header
+      description: correlation id to track requests
+      schema:
+        type: string
+    - name: catalog_id
+      in: path
+      description: unique identifier of the catalog
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            user_id:
+              title: User Identifier
+              type: string
+            data:
+              title: Feedback Data
+              type: array
+              items:
+                type: object
+                properties:
+                  column_name:
+                    description: Column name and feedback value
+                    type: string
+                  blox_tags:
+                    description: Tags feedback
+                    type: array
+                    items:
+                      $ref: '../../schemas/TagFeedbackDataMsdInternal.yaml'
+          
+    required: true
+  responses:
+    '200':
+      description: Successful Operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              request_id:
+                type: string
+              correlation_id:
+                type: string
+                example: 879b0717-182b-4faa-a9ed-d864d1f50af0
+              status:
+                type: string
+                example: SUCCESS
+              data:
+                type: object
+                properties:
+                  tags_update_resp:
+                    type: object
+                    properties:
+                      Status:
+                        type: string
+                        example: Success
+                      Data:
+                        type: string
+                        example: [{'Message': 'Content catalog_id: dac7e45d62 with mad_id 6344bd04-8fee-50e4-ac11-5c136735ba50_mvp-feedback-test246_22_300431984', 'Status': 'Created', 'Status_code': 201}]
+                  catalog_fields_update_resp:
+                    type: object
+                    properties:
+                      Status:
+                        type: string
+                        example: Success
+                      Data:
+                        type: string
+                        example: [{'Message': 'Content catalog_id: dac7e45d62 with mad_id 6344bd04-8fee-50e4-ac11-5c136735ba50_mvp-feedback-test246_22_300431984', 'Status': 'Created', 'Status_code': 201}]
+    '400':
+      description: Failure Operation
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/PostFailureResponse.yaml'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/PostFailureResponse.yaml'

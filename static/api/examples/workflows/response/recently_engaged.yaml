@@ -1,0 +1,65 @@
+request_id: 7d1030767b8411edae01f28c070c22cc
+correlation_id: 7d1030767b8411edae01f28c070c22cc
+status: SUCCESS
+data:
+  id: 93161fc3-5deb-436b-9c05-03b0042b619d
+  name: Recently Engaged
+  type: Journey-aware
+  inputs: []
+  required_config:
+  - type: events
+  config_schema:
+    type: array
+    items:
+      type: object
+      properties:
+        params:
+          type: array
+          items:
+            anyOf:
+            - type: object
+              properties:
+                value:
+                  type: string
+                  default: daily
+                  enum:
+                  - weekly
+                  - fortnightly
+                  - daily
+                  - monthly
+                  - quarterly
+                  - yearly
+                type:
+                  description: Parameter used to personalise the result
+                  const: temporal
+                field:
+                  decription: 'The timeframe used to determine product popularity. Example:
+                    Input - (Lookback period: 7 days, User Event: Add to Cart), Result
+                    - (Most added to cart in the last 7 days.)'
+                  const: lookback
+            - type: object
+              properties:
+                value:
+                  type: number
+                  minimum: -5
+                  maximum: 10
+                type:
+                  description: Parameter used to personalise the result
+                  const: events
+                field:
+                  type: string
+                  description: Indicate the importance of user event(s) to be considered
+                    by the model while displaying results.
+  DAG:
+    members:
+    - node:
+        name: fetch_user_history
+      dependencies: []
+    - node:
+        name: get_pageview_records
+      dependencies:
+      - fetch_user_history
+    - node:
+        name: general_product_assembly
+      dependencies:
+      - get_pageview_records

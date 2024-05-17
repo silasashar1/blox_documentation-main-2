@@ -1,0 +1,38 @@
+get:
+  tags:
+    - cfcp
+  summary: Status
+  description: Get status of the latest dag run.
+  operationId: status_api_v1_cfcp_status_get
+  parameters:
+    - required: false
+      schema:
+        title: Dag Id
+        type: string
+      name: dag_id
+      in: query
+    - required: false
+      schema:
+        title: Dag Run Id
+        type: string
+      name: dag_run_id
+      in: query
+    - required: false
+      schema:
+        title: Use Case
+        type: string
+      name: use_case
+      in: query
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/StatusResponse.yaml'
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/HTTPValidationError.yaml'

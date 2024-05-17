@@ -1,0 +1,31 @@
+get:
+  tags:
+  - events
+  summary: Event Job Status
+  description: Returns events pipeline enable status for client
+  operationId: events_update_status
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/EventsJobStatusOut.yaml'
+    '400':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/PostFailureResponse.yaml'
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/HTTPValidationError.yaml'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/PostFailureResponse.yaml'

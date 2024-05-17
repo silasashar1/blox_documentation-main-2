@@ -1,0 +1,18 @@
+post:
+  tags:
+    - trending
+  summary: Discover Trending Use Cases for a Client
+  operationId: discover_trending
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/TrendingDiscover.yaml'
+    '404':
+      description: Config does not exist
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/ErrorResponse.yaml'

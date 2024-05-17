@@ -1,0 +1,26 @@
+title: ExtractionConfig
+type: object
+properties:
+  taxonomy_id:
+    title: taxonomy
+    type: string
+    example: taxonomy
+  graph_id:
+    title: graph
+    type: string
+    example: graph_id
+  active:
+    title: active
+    type: boolean
+    example: true
+  type:
+    title: type
+    type: string
+    enum:
+    - digestion
+    - enrichment
+    - trending
+    example: digestion
+required:
+- taxonomy_id
+- graph_id

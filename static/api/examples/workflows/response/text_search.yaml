@@ -1,0 +1,64 @@
+request_id: 7d1030767b8411edae01f28c070c22cc
+correlation_id: 7d1030767b8411edae01f28c070c22cc
+status: SUCCESS
+data:
+  id: 064c0897-70ac-438f-a32a-19cb42d61d43
+  name: Text Search
+  type: Contextual
+  inputs:
+  - name: query_string
+    required: false
+  - name: facets
+    required: false
+  - name: facet_limit
+    required: false
+  config_schema:
+    type: array
+    items:
+      type: object
+      properties:
+        params:
+          type: array
+          items:
+            anyOf:
+            - type: object
+              properties:
+                value:
+                  type: string
+                  default: Relevance
+                  enum:
+                  - Relevance
+                  - Trending
+                  - Price low to high
+                  - Price high to low
+                type:
+                  description: Parameter used to order the results
+                  const: ordering
+                field:
+                  decription: Order by
+                  const: order_by
+            - type: object
+              properties:
+                value:
+                  type: boolean
+                  default: 'false'
+                type:
+                  description: Parameter used to personalise the result
+                  const: personalisation
+                field:
+                  decription: When enabled, the result will be personalized based on
+                    the user history
+                  const: personalisation
+  DAG:
+    members:
+    - node:
+        name: get_text_search_query
+      dependencies: []
+    - node:
+        name: get_es_results
+      dependencies:
+      - get_text_search_query
+    - node:
+        name: text_search_assembly
+      dependencies:
+      - get_es_results

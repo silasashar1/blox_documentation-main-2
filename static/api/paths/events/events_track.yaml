@@ -1,0 +1,31 @@
+post:
+  tags:
+  - events
+  summary: Track Event
+  description: Track a new event for an account
+  operationId: track_event
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/TrackEventIn.yaml'
+    required: true
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/TrackPostSuccessResponse.yaml'
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/HTTPValidationError.yaml'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/PostFailureResponse.yaml'

@@ -1,0 +1,19 @@
+delete:
+  tags:
+    - bundling apis
+  summary: Bundling APIs Delete
+  description: API to delete curation_model and tag_weight catalogs
+  operationId: bundling_api_delete
+  responses:
+    "200":
+      "description": "Successful Response, This will delete bundle model/tag weights catalogs"
+      "content":
+        application/json:
+          schema:
+            $ref: "../../schemas/search/bundle_index_simple_response.yaml"
+    "404":
+      "description": "Error Response, if index does not exists"
+      "content":
+        application/json:
+          schema:
+            $ref: "../../schemas/search/bundle_error_response.yaml"

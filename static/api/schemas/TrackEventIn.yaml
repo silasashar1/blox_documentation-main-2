@@ -1,0 +1,14 @@
+title: TrackEventIn
+required:
+- event_name
+- timestamp
+type: object
+properties:
+  event_name:
+    title: Name of event registered
+    type: string
+    example: page_view
+  timestamp:
+    title: Timestamp of the event
+    type: integer
+    example: 1653554422

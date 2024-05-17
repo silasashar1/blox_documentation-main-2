@@ -1,0 +1,18 @@
+title: Curation
+type: object
+properties:
+  id: 
+    type: string
+    readOnly: true
+  name:
+    title:  Name of the curation
+    type: string
+  catalog_id:
+    title: Catalog id associated to this curation
+    type: string
+  metadata:
+    title: Other metadata associated with the curation
+    type: object
+required:
+  - catalog_id
+  - name

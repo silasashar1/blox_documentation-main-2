@@ -1,0 +1,21 @@
+allOf:
+- $ref: 'EventsDataSourceRequest.yaml'
+- properties:
+    name: 
+      type: string 
+    type:
+      type: string
+    config:
+      type: object
+    mode:
+      type: string
+    schedule:
+      type: string
+    id:
+      type: string
+    created_ts:
+      type: string
+    updated_ts:
+      type: string
+  type: object
+title: EventsDataSourceResponse

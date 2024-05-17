@@ -1,0 +1,34 @@
+post:
+  tags:
+    - rarity
+  summary: Run a Rarity use case
+  description: Trigger a dag for the specific use case.
+  operationId: run_rarity
+  parameters:
+    - description: unique identifier for the job
+      required: true
+      schema:
+        title: Use Case
+        type: string
+        description: unique identifier for the job
+      name: use_case
+      in: query
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/EmptyResponse.yaml'
+    '409':
+      description: A run already in progress.
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/EmptyResponse.yaml'
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/HTTPValidationError.yaml'

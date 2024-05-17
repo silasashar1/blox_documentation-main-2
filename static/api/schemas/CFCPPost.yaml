@@ -1,0 +1,25 @@
+title: CFCPPost
+required:
+  - client
+  - use_case
+  - config
+type: object
+properties:
+  client:
+    title: Client
+    type: string
+    description: unique identifier for the client (currently it is <client_id>_<client_name>)
+  use_case:
+    title: Use Case
+    type: string
+    description: unique identifier for the client's use case e.g. cfcp_products, cfcp_buy_counts
+  config:
+    title: Config
+    anyOf:
+      - $ref: 'CFCPConfigLite.yaml'
+    description: CFCPConfig
+  lite:
+    title: Lite
+    type: boolean
+    description: create using lite config or the complete config
+    default: true

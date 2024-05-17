@@ -1,0 +1,49 @@
+get:
+  tags:
+    - affinity
+  summary: Status
+  description: Get status of the latest dag run.
+  operationId: get_affinity_status
+  parameters:
+    - required: false
+      schema:
+        title: Dag Id
+        type: string
+      name: dag_id
+      in: query
+    - required: false
+      schema:
+        title: Use Case
+        type: string
+      name: use_case
+      in: query
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            properties:
+              request_id:
+                title: Request Id
+                type: string
+                description: request_id generated internally
+              correlation_id:
+                title: Correlation Id
+                type: string
+                description: correlation_id for the request
+              status:
+                title: Status
+                type: string
+                description: status for the request
+              data:
+                type: object
+                anyOf:
+                  - $ref: '../../schemas/DagStatus.yaml'
+                  - $ref: '../../schemas/EmptyDataResponse.yaml'
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/HTTPValidationError.yaml'

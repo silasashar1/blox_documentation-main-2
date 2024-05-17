@@ -1,0 +1,11 @@
+title: AccountIn
+type: object
+properties:
+  delay:
+    title: delay
+    type: integer
+    example: 2
+  retries:
+    title: retries
+    type: integer
+    example: 2

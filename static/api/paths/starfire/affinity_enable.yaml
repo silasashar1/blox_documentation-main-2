@@ -1,0 +1,27 @@
+post:
+  tags:
+    - affinity
+  summary: Enable Affinity use case
+  operationId: enable_affinity
+  parameters:
+    - description: unique identifier for the job
+      required: true
+      schema:
+        title: Use Case
+        type: string
+        description: unique identifier for the job
+      name: use_case
+      in: query
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/EmptyResponse.yaml'
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/HTTPValidationError.yaml'

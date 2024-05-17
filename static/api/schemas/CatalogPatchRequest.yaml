@@ -1,0 +1,15 @@
+title: CatalogPatchRequest
+type: object
+properties:
+  config:
+    title: config
+    type: object
+  metadata:
+    title: metadata
+    type: object
+  extraction_config:
+    title: extraction_config
+    type: array
+    items:
+      type: object
+      $ref: 'ExtractionConfig.yaml'

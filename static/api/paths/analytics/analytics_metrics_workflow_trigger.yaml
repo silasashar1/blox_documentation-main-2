@@ -1,0 +1,22 @@
+post:
+  tags:
+  - analytics
+  summary: Trigger DAG for a client
+  description: Trigger DAG for a client
+  operationId: trigger_dag
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            title: Response List Clients Metric Configuration Get
+            type: array
+            items:
+              $ref: '../../schemas/MetricsOutWorkflowSchema.yaml'
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/HTTPValidationError.yaml'

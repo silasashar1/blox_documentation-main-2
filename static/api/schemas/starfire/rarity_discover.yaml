@@ -1,0 +1,32 @@
+type: object
+properties:
+  request_id:
+    type: string
+  correlation_id:
+    type: string
+  status:
+    type: string
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        use_case:
+          type: string
+          title: Use Case
+          description: Use case name
+        indexing:
+          type: string
+          title: Indexing
+        params:
+          type: object
+          properties:
+            field_name:
+              type: string
+              title: ES field name
+              description: Field name in ES
+            catalog_id:
+              title: Catalog Id
+              type: string
+  status_code:
+    type: integer

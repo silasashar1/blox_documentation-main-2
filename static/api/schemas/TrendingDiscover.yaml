@@ -1,0 +1,23 @@
+type: object
+properties:
+  use_case:
+    title: Use Case
+    type: string
+    example: 'trending_workflow_Test'
+  indexing:
+    title: Indexing
+    type: string
+    example: 'elasticsearch'
+  params:
+    title: Params
+    type: object
+    properties:
+      field_name:
+        title: Field Name
+        type: string
+        example: 'trending_field_5_ro_score'
+      catalog_id:
+        title: Catalog ID
+        type: string
+        example: 'c49b53bf19'
+

@@ -1,0 +1,124 @@
+request_id: 7d1030767b8411edae01f28c070c22cc
+correlation_id: 7d1030767b8411edae01f28c070c22cc
+status: SUCCESS
+data:
+  id: 2b6e4e14-fd46-4537-84bb-80f69d50f917
+  name: Recommended For You
+  type: Journey-aware
+  inputs: []
+  required_config:
+  - type: events
+  config_schema:
+    type: array
+    items:
+      type: object
+      properties:
+        params:
+          type: array
+          items:
+            anyOf:
+            - type: object
+              properties:
+                value:
+                  description: Weightage given to the field when boosting the result
+                  type: number
+                  minimum: -5
+                  maximum: 10
+                type:
+                  description: Indexed fields from the catalog (associated to the strategy)
+                    used to boost the results
+                  const: catalog_fields
+                field:
+                  description: All indexed fields from catalog are a valid list names
+                    that can used (including the ones in the taxonomy)
+                  type: string
+            - type: object
+              properties:
+                value:
+                  type: string
+                  default: daily
+                  enum:
+                  - weekly
+                  - fortnightly
+                  - daily
+                  - monthly
+                  - quarterly
+                  - yearly
+                type:
+                  description: Parameter used to personalise the result
+                  const: temporal
+                field:
+                  decription: 'The timeframe used to determine product popularity. Example:
+                    Input - (Lookback period: 7 days, User Event: Add to Cart), Result
+                    - (Most added to cart in the last 7 days.)'
+                  const: lookback
+            - type: object
+              properties:
+                value:
+                  type: number
+                  minimum: -5
+                  maximum: 10
+                type:
+                  description: Parameter used to personalise the result
+                  const: events
+                field:
+                  type: string
+                  description: Indicate the importance of user event(s) to be considered
+                    by the model while displaying results.
+            - type: object
+              properties:
+                value:
+                  description: Weightage given to the field when boosting the result
+                  type: number
+                  minimum: 0
+                  maximum: 1
+                type:
+                  description: exploration field
+                  const: exploration
+                field:
+                  description: exploration field
+                  const: exploration
+            - type: object
+              properties:
+                value:
+                  type: string
+                  default: msd_internal_trending
+                  enum:
+                  - trending_count_scorer
+                  - msd_internal_trending
+                type:
+                  description: Parameter used to personalise the result
+                  const: trending_score_field
+                field:
+                  decription: When enabled, the result will be personalized based on
+                    the user history
+                  const: trending_score_field
+  DAG:
+    members:
+    - node:
+        name: fetch_user_history
+      dependencies: []
+    - node:
+        name: filter_user_history_top_picks
+      dependencies:
+      - fetch_user_history
+    - node:
+        name: sample_history
+      dependencies:
+      - filter_user_history_top_picks
+    - node:
+        name: get_parallel_args_for_top_picks
+      dependencies:
+      - sample_history
+    - node:
+        name: execute_module_dag(72cfb22f-be63-46e1-852c-14e27cbf34ee)
+      dependencies:
+      - get_parallel_args_for_top_picks
+    - node:
+        name: top_picks_assembly
+      dependencies:
+      - execute_module_dag(72cfb22f-be63-46e1-852c-14e27cbf34ee)
+    - node:
+        name: arrange_response_based_on_rating
+      dependencies:
+      - top_picks_assembly

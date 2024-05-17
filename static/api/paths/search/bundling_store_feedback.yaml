@@ -1,0 +1,39 @@
+post:
+  tags:
+    - bundling apis
+  summary: Feedback API
+  description: Returns the list of objects
+  operationId: bundling_api_feedback
+  requestBody:
+    description: Feedback payload
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/search/bundle_store_feedback_request.yaml"
+        examples:
+          store_feedback_request:
+            value:
+              origin: vue_app
+              gender: women
+              catalogs:
+                c49b53bf19:
+                  data: 
+                    '47430e39-76cb-5b2e-8e18-f122e9999a1c_pt-tata-run-1_1':
+                        - product_id: MP000000011362770
+                        - product_id: MP000000011504918
+              feedback_type: outfit_accept
+              page_num: 1
+              num_results: 48
+  responses:
+    "200":
+      "description": "OK"
+      "content":
+        application/json:
+          schema:
+            $ref: "../../schemas/search/bundle_store_feedback_response.yaml"
+    "400":
+      "description": "Error Response"
+      "content":
+        application/json:
+          schema:
+            $ref: "../../schemas/search/bundle_curation_apis_error_response.yaml"

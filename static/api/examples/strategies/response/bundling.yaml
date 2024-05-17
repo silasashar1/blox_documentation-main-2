@@ -1,0 +1,19 @@
+request_id: 7d1030767b8411edae01f28c070c22cc
+correlation_id: 7d1030767b8411edae01f28c070c22cc
+status: SUCCESS
+data:
+  id: e13e6598-1d5a-44ac-8663-e60c7668a912
+  workflow_id: 02b397d5-b225-405a-a582-6665804f698e
+  description: This model displays the themes for cross-product recommendations for
+    the product in view based on your customer's affinities.
+  name: Bundling
+  preset: true
+  client: global
+  metadata:
+    max_content: 16
+  catalog_id: test_catalog
+  config:
+  - params:
+    - value: 2
+      type: bundle_boost
+      field: base_color

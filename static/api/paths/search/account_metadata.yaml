@@ -1,0 +1,26 @@
+post:
+  tags:
+  - search
+  summary: Create Account Metadata configs
+  description: Create account metadata configs
+  operationId: create_account_metadata
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/AccountMetaIn.yaml'
+    required: true
+  responses:
+    '201':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+              $ref: '../../schemas/AccountMetaOut.yaml'
+                
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/HTTPValidationError.yaml'

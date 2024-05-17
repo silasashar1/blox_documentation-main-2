@@ -86,6 +86,7 @@ const docs = [
       },
     },
   },
+
   {
     id: 'faq',
     path: 'docs/faq',
@@ -114,6 +115,16 @@ const docs = [
     id: 'Connectors-Manager',
     path: 'docs/Connectors-Manager',
     routeBasePath: '/Connectors-Manager',
+    versions: {
+      current: {
+        label: '1.x.x',
+      },
+    },
+  },
+  {
+    id: 'SSO',
+    path: 'docs/SSO',
+    routeBasePath: '/SSO',
     versions: {
       current: {
         label: '1.x.x',

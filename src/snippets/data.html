@@ -9,51 +9,45 @@
 <div class="sdks-dropdown flex max-w-lg flex-col rounded-2xl lg:min-w-[768px]">
   <div class="flex flex-col bg-secondary-800 p-4 lg:min-h-[300px] lg:flex-row">
     <div class="flex flex-1 flex-col gap-8 rounded-xl bg-secondary-1000 p-6">
-     
-      <a data-dropdown-sdks-menu="desktop" onfocus="document.body.setAttribute('data-sdk-menu', 'desktop')"
-      onmouseover="document.body.setAttribute('data-sdk-menu', 'desktop')"
-      class="flex cursor-pointer items-start justify-start gap-2 border-none bg-transparent text-black dark:text-white"
-      href="/">
-     
-      <div class="flex flex-col items-start justify-start gap-1">
-        <div class="text-base font-semibold">Content Manager</div>
-        <p class="mb-0 text-left text-sm text-text-400">
-          With Vue’s Document Manager, you will be able to process documents, extract information from them and use them in subsequent workflows
-        </p>
-      </div>
-    </a>
-     
-     
-    <a data-dropdown-sdks-menu="web" onfocus="document.body.setAttribute('data-sdk-menu', 'web')"
-    onmouseover="document.body.setAttribute('data-sdk-menu', 'web')"
-    class="flex cursor-pointer items-start justify-start gap-2 border-none bg-transparent text-black dark:text-white"
-    href="/Content-Manager/">
-    <div class="flex-shrink-0">
+      <a data-dropdown-sdks-menu="web" onfocus="document.body.setAttribute('data-sdk-menu', 'web')"
+        onmouseover="document.body.setAttribute('data-sdk-menu', 'web')"
+        class="flex cursor-pointer items-start justify-start gap-2 border-none bg-transparent text-black dark:text-white"
+        href="/Connectors-Manager">
+        <div class="flex-shrink-0">
 
-    </div>
-    <div class="flex flex-col items-start justify-start gap-1">
-      <div class="text-base font-semibold">Dataset Manager</div>
-      <p class="mb-0 text-left text-sm text-text-400">
-        Vue provides you with the ability to upload and use datasets in your workflows. Oftentimes, document processing workflows also result in generation of large datasets that are difficult to keep a track of. 
-      </p>
-    </div>
-  </a>
-     
-     
-     
-    
+        </div>
+        <div class="flex flex-col items-start justify-start gap-1">
+          <div class="text-base font-semibold">Content Manager</div>
+          <p class="mb-0 text-left text-sm text-text-400">
+            Create and manage workflows through Vue’s all new low-code-no-code Workflow Manager. Once workflows are built, use the Job Manager to run these workflows and to see the results.
+          </p>
+        </div>
+      </a>
       <a data-dropdown-sdks-menu="mobile" onfocus="document.body.setAttribute('data-sdk-menu', 'mobile')"
         onmouseover="document.body.setAttribute('data-sdk-menu', 'mobile')"
         class="flex cursor-pointer items-start justify-start gap-2 border-none bg-transparent text-black dark:text-white"
-        href="/">
+        href="/Data-set">
+       
+        <div class="flex flex-col items-start justify-start gap-1">
+          <div class="text-base font-semibold">Dataset Manager</div>
+          <p class="mb-0 text-left text-sm text-text-400">
+            Customer Hub acts as a single repository of all customer data that is on the Vue platform
+          </p>
+        </div>
+      </a>
+      <a data-dropdown-sdks-menu="plugin" onfocus="document.body.setAttribute('data-sdk-menu', 'plugin')"
+        onmouseover="document.body.setAttribute('data-sdk-menu', 'plugin')"
+        class="flex cursor-pointer items-start justify-start gap-2 border-none bg-transparent text-black dark:text-white"
+        href="/Document-Manager/">
        
         <div class="flex flex-col items-start justify-start gap-1">
           <div class="text-base font-semibold">Document Manager</div>
           <p class="mb-0 text-left text-sm text-text-400">
-            With Vue’s Document Manager, you will be able to process documents, extract information from them and use them in subsequent workflows
+            Customer Hub acts as a single repository of all customer data that is on the Vue platform
           </p>
         </div>
       </a>
+   
    
     </div>
     <div class="flex-1 p-6">
@@ -70,7 +64,20 @@
               <!-- Nested List Begins Here -->
               <ul style="margin-left: 20px; list-style-type: circle;">
                 <li><a href="/Content-Manager/concepts">Concepts</a></li>
-                <li><a href="/dataset">User Guides</a></li>
+                <li><a href="/Content-Manager">User Guide</a></li>
+           
+              </ul>
+            </li>
+            
+            <li>
+              <a href="/api/" class="sdk-link">
+                <img src="https://vueai.cdn.prismic.io/vueai/436f34cd-542c-4bd9-b99e-4a9aa9229071_sl-icon-a.svg?fit=max&w=64" />
+                Integration
+              </a>
+              <!-- Nested List Begins Here -->
+              <ul style="margin-left: 20px; list-style-type: circle;">
+                <li><a href="/api/"">API Reference</a></li>
+               
            
               </ul>
             </li>
@@ -81,8 +88,46 @@
                 Document Manager
               </a>
             </li> -->
-            <li>
+            <!-- <li>
               <a href="/Content-Manager" class="sdk-link">
+                <img src="https://vueai.cdn.prismic.io/vueai/436f34cd-542c-4bd9-b99e-4a9aa9229071_sl-icon-a.svg?fit=max&w=64" />
+                Integration
+              </a>
+             
+              <ul style="margin-left: 20px; list-style-type: circle;">
+                <li><a href="/api/"">API Reference</a></li>
+                <li><a href="/Integration">SDK</a></li>
+           
+              </ul>
+            </li>
+           -->
+          </ul>
+        </div>
+        <div class="mt-6 flex flex-1 flex-col">
+          
+        </div>
+      </div>
+
+      <div class="flex gap-2" data-dropdown-sdks="plugin">
+        <div class="flex flex-1 flex-col">
+          <h3 class="!mb-0.5"></h3>
+          <span class="none hidden text-sm font-normal lg:block"></span>
+          <ul class="sdk-ul">
+            <li>
+              <a href="/Document-Manager/" class="sdk-link">
+                <img src="https://vueai.cdn.prismic.io/vueai/436f34cd-542c-4bd9-b99e-4a9aa9229071_sl-icon-a.svg?fit=max&w=64" />
+                Resources
+              </a>
+              <!-- Nested List Begins Here -->
+              <ul style="margin-left: 20px; list-style-type: circle;">
+                <li><a href="/Content-Manager/concepts">Concepts</a></li>
+                <li><a href="/Document-Manager/">User Guides</a></li>
+           
+              </ul>
+            </li>
+
+            <li>
+              <a href="/api/" class="sdk-link">
                 <img src="https://vueai.cdn.prismic.io/vueai/436f34cd-542c-4bd9-b99e-4a9aa9229071_sl-icon-a.svg?fit=max&w=64" />
                 Integration
               </a>
@@ -96,24 +141,6 @@
           
           </ul>
         </div>
-        <div class="mt-6 flex flex-1 flex-col">
-          
-        </div>
-      </div>
-
-      <div class="flex gap-2" data-dropdown-sdks="plugin">
-        <div class="flex-1">
-          <h3>Core SDK</h3>
-
-          <ul class="list-none pl-0">
-            <li>
-              <a href="/plugin-sdk" class="sdk-link">
-                <img src="/static/landing-page/sdk-icons/js.png" />
-                Javascript
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
 
       <div class="flex flex-col gap-2" data-dropdown-sdks="mobile">
@@ -122,14 +149,14 @@
           <span class="none hidden text-sm font-normal lg:block"></span>
           <ul class="sdk-ul">
             <li>
-              <a href="/Document-Manager" class="sdk-link">
+              <a href="/Data-set" class="sdk-link">
                 <img src="https://vueai.cdn.prismic.io/vueai/436f34cd-542c-4bd9-b99e-4a9aa9229071_sl-icon-a.svg?fit=max&w=64" />
                 Resources
               </a>
               <!-- Nested List Begins Here -->
               <ul style="margin-left: 20px; list-style-type: circle;">
                 <li><a href="/Content-Manager/concepts">Concepts</a></li>
-                <li><a href="/Document-Manager">User Guides</a></li>
+                <li><a href="/Data-set">User Guides</a></li>
            
               </ul>
             </li>
@@ -150,43 +177,6 @@
           </ul>
         </div>
         
-
-
-</div>
-<div class="flex flex-col gap-2" data-dropdown-sdks="mobile">
-  <div class="flex flex-1 flex-col">
-    <h3 class="!mb-0.5"></h3>
-    <span class="none hidden text-sm font-normal lg:block"></span>
-    <ul class="sdk-ul">
-      <li>
-        <a href="/Document-Manager" class="sdk-link">
-          <img src="https://vueai.cdn.prismic.io/vueai/436f34cd-542c-4bd9-b99e-4a9aa9229071_sl-icon-a.svg?fit=max&w=64" />
-          Resources
-        </a>
-        <!-- Nested List Begins Here -->
-        <ul style="margin-left: 20px; list-style-type: circle;">
-          <li><a href="/Content-Manager/concepts">Concepts</a></li>
-          <li><a href="/Document-Manager">User Guides</a></li>
-     
-        </ul>
-      </li>
-
-      <li>
-        <a href="/api/" class="sdk-link">
-          <img src="https://vueai.cdn.prismic.io/vueai/436f34cd-542c-4bd9-b99e-4a9aa9229071_sl-icon-a.svg?fit=max&w=64" />
-          Integration
-        </a>
-        <!-- Nested List Begins Here -->
-        <ul style="margin-left: 20px; list-style-type: circle;">
-          <li><a href="/api/"">API Reference</a></li>
-         
-     
-        </ul>
-      </li>
-    
-    </ul>
-  </div>
-  
 
 
 </div>

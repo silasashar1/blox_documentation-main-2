@@ -45,6 +45,16 @@ const docs = [
       },
     },
   },
+  {
+    id: 'Data-set',
+    path: 'docs/Data-set',
+    routeBasePath: '/Data-set',
+    versions: {
+      current: {
+        label: '1.x.x',
+      },
+    },
+  },
   // {
   //   id: 'react-ui-kit',
   //   path: 'docs/react-ui-kit/',
@@ -67,7 +77,7 @@ const docs = [
   },
 
   {
-    id: 'Account',
+    id: 'Administration',
     path: 'docs/Account',
     routeBasePath: '/Account',
     versions: {
@@ -491,7 +501,7 @@ const config = {
            
           // },
           {
-            label: 'Account',
+            label: 'Administration',
             type: 'dropdown',
             className: 'dyte-dropdown',
             items: [{

@@ -3,6 +3,8 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
+import HubCards from '../components/homepage/HubCards';
+
 
 // Import your custom components
 import HeroSection from '../components/homepage/HeroSection';
@@ -34,6 +36,7 @@ export default function Homepage() {
       {/* <NewsfeedLauncher /> */}
       <HeroSection />
       <GuidesAndSamples />
+   
       <SDKs />
       <APIReferenceSection />
       {/* Additional sections */}
@@ -41,8 +44,11 @@ export default function Homepage() {
         <ResourcesSection />
         <HelpSection className="-mb-48" />
       </div>
+      {/* <div>
+      <HubCards />
+    </div> */}
       <CommunitySection />
-      <HomeFooter />
+     
     </Layout>
   );
 }

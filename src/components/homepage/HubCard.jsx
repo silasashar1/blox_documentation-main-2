@@ -1,3 +1,6 @@
+// 
+
+
 import React from 'react';
 import './HubCards.css'; // Ensure the CSS file is imported
 
@@ -18,14 +21,14 @@ const HubCard = ({ title, description, link, buttonLabel, additionalButtonLabel,
     ) : (
       <>
         <div className="ComponentsButtonOutlined">
-          <button>{buttonLabel}</button>
+          <a href={link} className="hub-card-button">{buttonLabel}</a>
         </div>
         <div className="ComponentsButtonOutlined">
-          <button>{additionalButtonLabel}</button>
+          <a href={additionalButtonLink} className="hub-card-button AdditionalButton">{additionalButtonLabel}</a>
         </div>
       </>
     )}
-    {!comingSoon && <button className="ViewMoreButton">View More</button>}
+    {!comingSoon && <a href={link} className="ViewMoreButton">View More</a>}
   </div>
 );
 

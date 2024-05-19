@@ -5,10 +5,10 @@ import './HubCards.css'; // Import the CSS file for the HubCards
 
 export default function HelpSection({ className = '' }) {
   return (
-    <section className="px-3 pt-2">
+    <section className="px-3 ">
       <div
         className={clsx(
-          'mx-auto max-w-1xl rounded-3xl bg-white p-4 py-8 text-black dark:bg-black dark:text-white lg:p-20 lg:py-20',
+          'mx-auto max-w-1xl rounded-3xl bg-white p-4 py-10 text-black dark:bg-black dark:text-white lg:p-20 lg:py-20',
           className
         )}
       >

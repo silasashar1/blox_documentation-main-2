@@ -104,7 +104,7 @@ export default function HeroSection() {
       /> */}
     </div>
       <section className="noise-bg no-underline-links px-4 pt-16 lg:py-0">
-        <div className="flex flex-col items-center justify-between py-8">
+        <div className="flex flex-col items-center justify-between py-2">
           <h2 className="mb-4 font-jakarta text-5xl font-bold">
             Welcome to Vue Support
           </h2>

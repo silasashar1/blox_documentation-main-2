@@ -72,7 +72,7 @@ const config = {
 
 export default function App() {
     return (
-        <div>
+        <div style={{ padding: '20px', backgroundColor: 'inherit' }}>
             <Faq data={data} styles={styles} config={config} />
         </div>
     );

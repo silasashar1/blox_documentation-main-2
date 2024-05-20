@@ -1,6 +1,6 @@
 import React from "react";
 import Faq from "react-faq-component";
-
+import "../css/custom.css"; 
 const data = {
     title: "FAQ - Vue Platform",
     rows: [
@@ -49,30 +49,37 @@ const data = {
 };
 
 const styles = {
-    // Add any custom styles here
-    // bgColor: 'white',
-    titleTextColor: 'blue',
-    // titleTextSize: '48px',
-    rowTitleColor: 'blue',
-    // rowTitleTextSize: 'medium',
-    // rowContentColor: 'grey',
+    // // Add any custom styles here
+    // // bgColor: 'white',
+    // titleTextColor: 'blue',
+    // // titleTextSize: '48px',
+    // rowTitleColor: 'blue',
+    // // rowTitleTextSize: 'medium',
+    // // rowContentColor: 'grey',
+    // rowContentTextSize: '16px',
+    // // rowContentPaddingTop: '10px',
+    // rowContentPaddingBottom: '10px',
+    // rowContentPaddingLeft: '50px',
+    // // rowContentPaddingRight: '150px',
+    // // arrowColor: "red",
+    // //transitionDuration: "1s",
+    // // timingFunc: "ease"
+    titleTextColor: 'var(--newsfeed-text)',
+    rowTitleColor: 'var(--newsfeed-text)',
+    rowContentColor: 'var(--newsfeed-text)',
     rowContentTextSize: '16px',
-    // rowContentPaddingTop: '10px',
     rowContentPaddingBottom: '10px',
     rowContentPaddingLeft: '50px',
-    // rowContentPaddingRight: '150px',
-    // arrowColor: "red",
-    //transitionDuration: "1s",
-    // timingFunc: "ease"
+    bgColor: 'transparent', // Ensure background is transparent
 };
 
 const config = {
     // Add any custom configuration here
 };
 
-export default function App() {
+export default function CustomFaq() {
     return (
-        <div style={{ padding: '20px', backgroundColor: 'inherit' }}>
+        <div className="faq-container" style={{ backgroundColor: 'transparent', color: 'var(--newsfeed-text)' }}>
             <Faq data={data} styles={styles} config={config} />
         </div>
     );
